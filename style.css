@@ -53,3 +53,12 @@ footer {
     padding: 15px;
     margin-top: 40px;
 }
+.alert-test {
+    background: #ff4d4d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
