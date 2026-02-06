@@ -154,3 +154,27 @@ footer {
         font-size: 20px;
     }
 }
+/* ------------------------------
+   BOUTON D’ACTION
+--------------------------------*/
+.cta-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.cta-button {
+    background: #0a3d62;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #1e90ff;
+}
+
