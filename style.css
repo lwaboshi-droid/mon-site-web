@@ -1,58 +1,17 @@
+/* ------------------------------
+   STYLES GÉNÉRAUX
+--------------------------------*/
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f4f6f9;
     color: #333;
+    line-height: 1.6;
 }
 
-/* HEADER */
-header {
-    background: #0a3d62;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.logo {
-    width: 80px;
-    display: block;
-    margin: 0 auto 10px auto;
-}
-
-/* HERO SECTION */
-.hero {
-    background: #1e90ff;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.hero h2 {
-    margin-bottom: 10px;
-}
-
-/* MESSAGE SECTION */
-.message {
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.message h3 {
-    margin-top: 0;
-}
-
-/* FOOTER */
-footer {
-    background: #0a3d62;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-}
+/* ------------------------------
+   MESSAGE D’ALERTE
+--------------------------------*/
 .alert-test {
     background: #ff4d4d;
     color: white;
@@ -61,4 +20,137 @@ footer {
     font-size: 22px;
     font-weight: bold;
     margin: 0;
+}
+
+/* ------------------------------
+   HEADER
+--------------------------------*/
+header {
+    background: #0a3d62;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 90px;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* ------------------------------
+   SECTION HERO
+--------------------------------*/
+.hero {
+    background: #1e90ff;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ------------------------------
+   MESSAGE DE SENSIBILISATION
+--------------------------------*/
+.message {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.message h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #0a3d62;
+}
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+footer {
+    background: #0a3d62;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+    font-size: 15px;
+}
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+--------------------------------*/
+
+/* Tablettes et écrans moyens */
+@media (max-width: 900px) {
+    .message {
+        margin: 30px 20px;
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+}
+
+/* Téléphones */
+@media (max-width: 600px) {
+    .alert-test {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    header {
+        padding: 20px 10px;
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .hero {
+        padding: 35px 15px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .message {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+
+    .message h3 {
+        font-size: 20px;
+    }
 }
