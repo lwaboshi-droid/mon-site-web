@@ -2,54 +2,84 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sensibilisation contre les Cyberattaques</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <img src="logo.png" alt="Logo cybersécurité" class="logo">
-        <h1>Sensibilisation contre les Cyberattaques</h1>
-    </header>
+<header>
+    <img src="logo.png" alt="Logo cybersécurité" class="logo">
+    <h1>Sensibilisation contre les Cyberattaques</h1>
+</header>
 
-    <div class="alert-test">
-        ⚠️ Ceci est un test, tu as été piégé
-    </div>
+<div class="alert-test">
+    ⚠️ Ceci est un test, tu as été piégé
+</div>
 
-    <section class="hero">
-        <h2>Protégez-vous contre les menaces numériques</h2>
-        <p>La cybersécurité commence par la vigilance. Découvrez comment éviter les pièges les plus courants.</p>
-    </section>
-    
+<section class="hero">
+    <h2>Protégez-vous contre les menaces numériques</h2>
+    <p>La cybersécurité commence par la vigilance. Découvrez comment éviter les pièges les plus courants.</p>
+</section>
+
+<!-- BOUTON 1 : PAGE COURRIEL -->
 <div class="cta-container">
-    <a href="reconnaitre-courriel.html" class="cta-button">
+    <a href="#" class="cta-button" data-page="courriel">
         Apprendre à reconnaître un courriel frauduleux
     </a>
 </div>
 
+<!-- BOUTON 2 : VIDEO -->
 <div class="cta-container">
-    <a href="https://drive.google.com/file/d/1Eln2JoB4kfsf-loOaWNvKagLIzk9Euu5/view?usp=sharing" 
-       class="cta-button" 
-       target="_blank">
+    <a href="#" class="cta-button" data-page="video">
         Regarder la vidéo de sensibilisation
     </a>
 </div>
 
+<section class="message">
+    <h3>Message de sensibilisation</h3>
+    <p>
+        Les cyberattaques sont de plus en plus fréquentes et sophistiquées.  
+        Les pirates utilisent des courriels frauduleux, des liens piégés et des sites imités pour voler vos informations.  
+        Avant de cliquer sur un lien, assurez-vous toujours de connaître l’expéditeur et de vérifier l’adresse du site.
+    </p>
+</section>
 
-    <section class="message">
-        <h3>Message de sensibilisation</h3>
-        <p>
-            Les cyberattaques sont de plus en plus fréquentes et sophistiquées.  
-            Les pirates utilisent des courriels frauduleux, des liens piégés et des sites imités pour voler vos informations.  
-            Avant de cliquer sur un lien, assurez-vous toujours de connaître l’expéditeur et de vérifier l’adresse du site.
-        </p>
-    </section>
+<footer>
+    <p>Projet de sensibilisation — Université de Hearst</p>
+</footer>
 
-    <footer>
-        <p>Projet de sensibilisation — Université de Hearst</p>
-    </footer>
+<!-- SCRIPT 1 : ENREGISTREMENT DE L’OUVERTURE -->
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id") || "inconnu";
+
+    fetch("https://script.google.com/macros/s/AKfycbzkJWKvIeuIVdqaFT7yh8DpUiohgymydJ0iAAauz8ck9p1Jx9CLkLMObh1QC_u4e37Vyg/exec?type=ouverture&id=" + id)
+        .then(r => console.log("Ouverture enregistrée"));
+</script>
+
+<!-- SCRIPT 2 : ENREGISTREMENT DES CLICS + REDIRECTION -->
+<script>
+    document.querySelectorAll(".cta-button").forEach(btn => {
+        const page = btn.getAttribute("data-page");
+
+        btn.addEventListener("click", () => {
+
+            // Enregistrement du clic
+            fetch("https://script.google.com/macros/s/AKfycbzkJWKvIeuIVdqaFT7yh8DpUiohgymydJ0iAAauz8ck9p1Jx9CLkLMObh1QC_u4e37Vyg/exec?type=click&id=" + id + "&page=" + page);
+
+            // Redirections
+            if (page === "courriel") {
+                window.location.href = "reconnaitre-courriel.html";
+            }
+
+            if (page === "video") {
+                window.location.href = "https://drive.google.com/file/d/1Eln2JoB4kfsf-loOaWNvKagLIzk9Euu5/view?usp=sharing";
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
