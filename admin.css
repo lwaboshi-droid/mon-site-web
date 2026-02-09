@@ -48,3 +48,63 @@ ul {
     font-weight: bold;
     color: #0a2a66;
 }
+/* ===== STYLE MODERNE POUR LES TEXTES ET SECTIONS ===== */
+
+/* Titres principaux */
+h2 {
+    font-size: 26px;
+    color: #0a2a66;
+    margin-bottom: 15px;
+    border-left: 5px solid #0a2a66;
+    padding-left: 12px;
+    font-weight: bold;
+}
+
+/* Sous-titres */
+h3 {
+    font-size: 22px;
+    color: #1e88e5;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* Sections en cartes */
+.section-card {
+    background: white;
+    padding: 25px;
+    margin: 25px auto;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+/* Listes */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    background: #eef3fc;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    color: #0a2a66;
+    font-weight: 600;
+}
+
+/* Liste des clics par page */
+.page-clicks li {
+    background: #e8f0fe;
+}
+
+/* Texte général */
+p, li {
+    font-size: 18px;
+}
+
+/* Espacement entre blocs */
+.block {
+    margin-top: 30px;
+}
