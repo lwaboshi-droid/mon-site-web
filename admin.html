@@ -54,6 +54,16 @@ fetch("https://script.google.com/macros/s/AKfycbzkJWKvIeuIVdqaFT7yh8DpUiohgymydJ
             data.clicksPerUser.map(c => `<li>${c.user} : ${c.count}</li>`).join("");
     });
 </script>
+<section>
+    <h2>Rapport PDF</h2>
+    <button id="download-pdf">Télécharger le rapport PDF</button>
+</section>
+
+<script>
+document.getElementById("download-pdf").addEventListener("click", () => {
+    window.open("https://script.google.com/macros/s/AKfycbzkJWKvIeuIVdqaFT7yh8DpUiohgymydJ0iAAauz8ck9p1Jx9CLkLMObh1QC_u4e37Vyg/exec?type=pdf", "_blank");
+});
+</script>
 
 </body>
 </html>
