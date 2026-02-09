@@ -3,81 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin – Statistiques de la campagne</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Statistiques — Cyberattaque</title>
+    <link rel="stylesheet" href="admin.css">
 </head>
 
 <body>
 
 <header>
-    <h1>Tableau de bord – Campagne de sensibilisation</h1>
+    <h1>Statistiques de la campagne</h1>
 </header>
 
-<section>
+<!-- ===== STATISTIQUES GLOBALES ===== -->
+<section class="section-card">
     <h2>Statistiques globales</h2>
 
     <div class="stats-grid">
         <div class="stat-box">
             Ouvertures<br>
-            <span id="open-count">0</span>
+            <strong id="open-count">0</strong>
         </div>
 
         <div class="stat-box">
             Clics<br>
-            <span id="click-count">0</span>
+            <strong id="click-count">0</strong>
         </div>
 
         <div class="stat-box">
             Taux de clics<br>
-            <span id="ctr">0%</span>
+            <strong id="ctr">0%</strong>
         </div>
     </div>
 </section>
 
-
-<section>
+<!-- ===== ÉTUDIANTS AYANT CLIQUÉ ===== -->
+<section class="section-card">
     <h2>Étudiants ayant cliqué</h2>
-    <ul id="click-users">Chargement...</ul>
+    <ul id="students-list">
+        <!-- Liste générée par script -->
+    </ul>
 </section>
 
-<section>
+<!-- ===== CLICS PAR PAGE ===== -->
+<section class="section-card">
     <h2>Clics par page</h2>
-    <ul id="click-pages">Chargement...</ul>
+    <ul class="page-clicks" id="page-clicks">
+        <!-- Liste générée par script -->
+    </ul>
 </section>
 
-<section>
-    <h2>Clics par étudiant</h2>
-    <ul id="click-per-user">Chargement...</ul>
-</section>
-
+<!-- ===== SCRIPT DE RÉCUPÉRATION DES DONNÉES ===== -->
 <script>
-fetch("https://script.google.com/macros/s/AKfycbzGB6k69f9u7L0yJWIpCoS-mUrGvX2kXUk_EvG3nBZsAZXnvkLZNS_M8n-7UqrsfAfBWw/exec?type=stats")
-    .then(r => r.json())
-    .then(data => {
+    fetch("https://script.google.com/macros/s/AKfycbzkJWKvIeuIVdqaFT7yh8DpUiohgymydJ0iAAauz8ck9p1Jx9CLkLMObh1QC_u4e37Vyg/exec?type=stats")
+        .then(res => res.json())
+        .then(data => {
 
-        document.getElementById("open-count").textContent = data.open;
-        document.getElementById("click-count").textContent = data.click;
-        document.getElementById("ctr").textContent = (data.click / data.open * 100).toFixed(1) + "%";
+            // Statistiques globales
+            document.getElementById("open-count").textContent = data.ouvertures;
+            document.getElementById("click-count").textContent = data.clics;
+            document.getElementById("ctr").textContent = data.taux + "%";
 
-        document.getElementById("click-users").innerHTML =
-            data.users.map(u => `<li>${u}</li>`).join("");
+            // Étudiants ayant cliqué
+            const studentsList = document.getElementById("students-list");
+            data.etudiants.forEach(e => {
+                const li = document.createElement("li");
+                li.textContent = e;
+                studentsList.appendChild(li);
+            });
 
-        document.getElementById("click-pages").innerHTML =
-            data.pages.map(p => `<li>${p.page} : ${p.count}</li>`).join("");
-
-        document.getElementById("click-per-user").innerHTML =
-            data.clicksPerUser.map(c => `<li>${c.user} : ${c.count}</li>`).join("");
-    });
-</script>
-<section>
-    <h2>Rapport PDF</h2>
-    <button id="download-pdf">Télécharger le rapport PDF</button>
-</section>
-
-<script>
-document.getElementById("download-pdf").addEventListener("click", () => {
-    window.open("https://script.google.com/macros/s/AKfycbzGB6k69f9u7L0yJWIpCoS-mUrGvX2kXUk_EvG3nBZsAZXnvkLZNS_M8n-7UqrsfAfBWw/exec?type=pdf", "_blank");
-});
+            // Clics par page
+            const pageClicks = document.getElementById("page-clicks");
+            Object.entries(data.pages).forEach(([page, count]) => {
+                const li = document.createElement("li");
+                li.textContent = `${page} : ${count}`;
+                pageClicks.appendChild(li);
+            });
+        });
 </script>
 
 </body>
