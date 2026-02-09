@@ -1,6 +1,14 @@
-/* ===== STYLE ORIGINAL RECONSTRUIT POUR TON HTML ===== */
+/* ===== STYLE EXACT POUR TON INDEX.HTML ===== */
 
-/* En-tête */
+/* RESET SIMPLE */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f4ff;
+    color: #333;
+}
+
+/* HEADER */
 header {
     background: #0a2a66;
     color: white;
@@ -8,18 +16,18 @@ header {
     padding: 30px 20px;
 }
 
-header .logo {
-    width: 80px;
+.logo {
+    width: 90px;
     margin-bottom: 10px;
 }
 
-h1 {
+header h1 {
     margin: 0;
     font-size: 28px;
     font-weight: bold;
 }
 
-/* Alerte rouge */
+/* BLOC ROUGE D'AVERTISSEMENT */
 .alert-test {
     background: #d62828;
     color: white;
@@ -29,7 +37,7 @@ h1 {
     font-weight: bold;
 }
 
-/* Section bleue claire */
+/* SECTION BLEUE CLAIRE */
 .hero {
     background: #1e88e5;
     color: white;
@@ -47,10 +55,10 @@ h1 {
     margin: 0;
 }
 
-/* Boutons */
+/* BOUTONS */
 .cta-container {
     text-align: center;
-    margin: 20px 0;
+    margin: 25px 0;
 }
 
 .cta-button {
@@ -68,7 +76,7 @@ h1 {
     background: #051a40;
 }
 
-/* Message de sensibilisation */
+/* MESSAGE DE SENSIBILISATION */
 .message {
     max-width: 800px;
     margin: 30px auto;
@@ -85,7 +93,7 @@ h1 {
     color: #0a2a66;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     background: #0a2a66;
     color: white;
